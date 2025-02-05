@@ -21,3 +21,5 @@ const validateToken = asyncHandler(async (res, req, next) => {
 
     }
 });
+
+module.exports = validateToken;
