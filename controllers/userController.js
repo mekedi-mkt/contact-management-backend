@@ -71,12 +71,7 @@ const loginUser = asyncHandler(async (req, res) => {
 //@route GET /api/users/current
 //@access Private
 const currentUser = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
-  if (!user) {
-    res.status(404);
-    throw new Error("User not found");
-  }
-  res.status(200).json(user);
+  res.json(req.user);
 });
 
 module.exports = { registerUser, loginUser, currentUser };
